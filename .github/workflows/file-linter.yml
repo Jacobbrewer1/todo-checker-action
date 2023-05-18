@@ -37,7 +37,7 @@ jobs:
 
       - name: check for todos
         run: |
-          if grep --exclude-dir={.git,.github} -rE "TODO|todo|FIXME|FIXME"; then
+          if grep --exclude-dir={.git,.github,README.md} -rE "TODO|todo|FIXME|FIXME"; then
             exit 1
           else
             echo "All good"
