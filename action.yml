@@ -15,7 +15,7 @@ runs:
         ${{ github.action_path }}/entrypoint.sh
       shell: bash
       env:
-        exclude: ${{ inputs.exclude }}
+        INPUT_EXCLUDE: ${{ inputs.exclude }}
 
 branding:
   color: blue
