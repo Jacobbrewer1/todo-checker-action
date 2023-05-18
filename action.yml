@@ -1,0 +1,23 @@
+---
+name: 'TODO lint'
+description: 'Check for existing todos'
+author: 'Jacobbrewer1'
+
+inputs:
+  exclude:
+    description: 'File(s) or Directory, separate by commas if multiple files or folder are specified'
+    required: false
+
+runs:
+  using: 'composite'
+  steps:
+    - id: todo_lint
+      run: |
+        ${{ github.action_path }}/entrypoint.sh
+      shell: bash
+      env:
+        INPUT_EXCLUDE: ${{ inputs.exclude }}
+
+branding:
+  color: blue
+  icon: check-square
